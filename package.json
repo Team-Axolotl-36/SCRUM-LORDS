@@ -1,0 +1,19 @@
+{
+  "name": "scrum-lords",
+  "version": "1.0.0",
+  "description": "Axolotl 36",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Axolotl-36/SCRUM-LORDS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Axolotl-36/SCRUM-LORDS/issues"
+  },
+  "homepage": "https://github.com/Team-Axolotl-36/SCRUM-LORDS#readme"
+}
