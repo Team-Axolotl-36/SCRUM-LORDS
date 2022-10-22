@@ -9,7 +9,7 @@ const scrumRouter = require('./routes/scrumRouter');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(path.resolve(__dirname, '../build')));
+//app.use('/', express.static(path.resolve(__dirname, '../build')));
 
 
 app.use('/', scrumRouter);
