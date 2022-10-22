@@ -7,17 +7,29 @@ const ButtonContainer = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('this is input:', e.target.value);
+    // console.log('this is input:', e.target.value);
 
     const newProject = ( <Project projectTitle={input} key={input}/> );
     
     setProjects( [...projects, newProject] );
   
+    // fetch('/',{
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json'},
+    //   body: JSON.stringify({hello: 'world'})
+    // })
+    //   .then(resp => resp.json())
+    //   .then((data) => {
+    //     console.log('this is data from fetch:', data);
+    //   })
+    //   .catch((err) => {
+    //     console.log('Error :', err);
+    //   });
   }
 
 
   return (
-    <div>
+    <div id='buttonContainer'>
       <button 
         onClick={handleSubmit}>
         Button to add task.

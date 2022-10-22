@@ -6,6 +6,11 @@ body * {
     border: 1px red solid;
 }
 
+#buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .project {
     background-color: lightcyan;
     width: 30%;
