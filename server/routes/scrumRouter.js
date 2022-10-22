@@ -5,30 +5,26 @@ const scrumController = require('../controllers/scrumController');
 const router = express.Router();
 
 router.get('/',
-  scrumController.getCharacters,
-  (req, res) => res.status(200).json([])
+  scrumController.getTasks,
+  (req, res) => res.status(200).json(res.locals.data)
 );
 
-router.get('/',
-  scrumController.getSpecies,
-  (req, res) => res.status(200).json({})
-);
 
 router.post('/',
-  scrumController.addCharacter,
+  scrumController.addTask,
   (req, res) => res.status(200).json({})
 );
 
 
-router.patch('/',
-  scrumController.getFilm,
+router.patch('/:id',
+  scrumController.updateTask,
   (req, res) => res.status(200).json({})
 );
 
 
-router.delete('/',
-  scrumController.getFilm,
-  (req, res) => res.status(200).json({})
-);
+// router.delete('/',
+//   scrumController.getFilm,
+//   (req, res) => res.status(200).json({})
+// );
 
 module.exports = router;

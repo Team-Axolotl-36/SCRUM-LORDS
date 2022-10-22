@@ -1,35 +1,56 @@
-const models = require('../models/scrumModel');
+const { Pool } = require('pg');
+const models = require('../models/scrumModel.js');
 
 const scrumController = {};
+const obtainTasks = 'SELECT * FROM taskmanager';
+// const currentDate = Date.now();
+const currentDate = new Date().toDateString();
+const randomId = Math.floor(Math.random() * 1000000);
 
-scrumController.getCharacters = (req, res, next) => {
-  // write code here
+scrumController.getTasks = async (req, res, next) => {
+  try {
+    console.log('hello');
+    const data = await models.query(obtainTasks);
+    const dataRows = data.rows;
+    res.locals.data = dataRows;
+    next();
+  } catch (err) {
+    return next({
+      error: err,
+      message: 'you have an error in you get tasks middleware'
+    });
+  }
+
+};
+
+
+scrumController.addTask = async (req, res, next) => {
+  try {
+    const { project, task, priority } = req.body;
+    const anotherTask = `insert into taskmanager values ('${randomId}','${project}', '${task}', '${priority}', '${currentDate}')`;
+    console.log(project);
+    const newTask = await models.query(anotherTask);
+    next();
+  } catch (err) {
+    return next({
+      error: err,
+      message: 'you have an error in your addTask middleware'
+    });
+  }
+};
+
+scrumController.updateTask = (req, res, next) => {
+  const { id } = req.params;
+  const { project, task, priority } = req.body;
+  // this is template for updating 
+  //UPDATE Customers
+  // SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+  // WHERE CustomerID = 1;
 
   next();
 };
 
-scrumController.getSpecies = (req, res, next) => {
-  // write code here
 
-  next();
-};
 
-scrumController.getHomeworld = (req, res, next) => {
-  // write code here
-
-  next();
-};
-
-scrumController.getFilm = (req, res, next) => {
-  // write code here
-
-  next();
-};
-
-scrumController.addCharacter = (req, res, next) => {
-  // write code here
-
-  next();
-};
 
 module.exports = scrumController;
