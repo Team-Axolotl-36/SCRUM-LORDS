@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.resolve(__dirname, '../build')));
 
 
-app.use('/', scrumRouter)
+app.use('/', scrumRouter);
 
 app.use((err, req, res, next) => {
   const defaultErr = {

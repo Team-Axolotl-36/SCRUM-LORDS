@@ -3,9 +3,9 @@ const models = require('../models/scrumModel');
 const scrumController = {};
 
 scrumController.getCharacters = (req, res, next) => {
-  const { hello } = req.body;
-  console.log(hello)
-  res.locals.body = hello;
+  const { project, task, priority, currentDate } = req.body;
+  console.log(project, task, priority, currentDate);
+  // res.locals.body = hello;
   next();
 };
 
