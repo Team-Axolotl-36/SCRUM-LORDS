@@ -4,6 +4,7 @@ import App from './App.jsx';
 import { createRoot } from 'react-dom/client';
 
 //using React v 18 to connect root id from HTML to our rendered App
+import styles from './App.scss';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 const container = document.getElementById('root');
