@@ -13,6 +13,18 @@ const ButtonContainer = (props) => {
     
     setProjects( [...projects, newProject] );
   
+    fetch('/',{
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({hello: 'world'})
+    })
+      .then(resp => resp.json())
+      .then((data) => {
+        console.log('this is data from fetch:', data);
+      })
+      .catch((err) => {
+        console.log('Error :', err);
+      });
   }
 
 

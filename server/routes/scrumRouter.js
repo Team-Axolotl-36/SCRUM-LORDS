@@ -4,9 +4,9 @@ const scrumController = require('../controllers/scrumController');
 
 const router = express.Router();
 
-router.get('/',
+router.post('/',
   scrumController.getCharacters,
-  (req, res) => res.status(200).json([])
+  (req, res) => res.status(200).json(res.locals.body)
 );
 
 router.get('/',
