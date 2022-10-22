@@ -7,6 +7,7 @@ const obtainTasks = 'SELECT * FROM taskmanager';
 const currentDate = new Date().toDateString();
 const randomId = Math.floor(Math.random() * 1000000);
 
+<<<<<<< HEAD
 scrumController.getTasks = async (req, res, next) => {
   try {
     console.log('hello');
@@ -47,6 +48,12 @@ scrumController.updateTask = (req, res, next) => {
   // SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
   // WHERE CustomerID = 1;
 
+=======
+scrumController.getCharacters = (req, res, next) => {
+  const { project, task, priority, currentDate } = req.body;
+  console.log(project, task, priority, currentDate);
+  // res.locals.body = hello;
+>>>>>>> dev
   next();
 };
 
