@@ -12,19 +12,19 @@ router.get('/',
 
 router.post('/',
   scrumController.addTask,
-  (req, res) => res.status(200).json({})
+  (req, res) => res.status(200).json({success: true})
 );
 
 
-router.patch('/:id',
+router.patch('/',
   scrumController.updateTask,
-  (req, res) => res.status(200).json({})
+  (req, res) => res.status(200).json({success:true})
 );
 
 
-// router.delete('/',
-//   scrumController.getFilm,
-//   (req, res) => res.status(200).json({})
-// );
+router.delete('/',
+  scrumController.deleteTask,
+  (req, res) => res.status(200).json({success:true})
+);
 
 module.exports = router;
