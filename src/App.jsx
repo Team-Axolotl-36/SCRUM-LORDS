@@ -4,7 +4,7 @@ import BoardContainer from './components/BoardContainer.jsx';
 const App = () => {
   return (
     <div>
-      <h1>Scrum Squad AYY</h1>
+      <h1 id='title'>Scrum Squad</h1>
       <BoardContainer/>
     </div>
   );
