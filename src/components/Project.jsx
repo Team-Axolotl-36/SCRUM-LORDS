@@ -12,18 +12,31 @@ const Project = (props) => {
   }
 
   function deleteTask(key, id) {
-    console.log('event: ', id);
-    console.log('tasks :', task);
-
-    const test = task.filter((element) => {
-      console.log(element.props.id);
-      
-      return element.props.id !== id;
+    // console.log('event: ', id);
+    // console.log('tasks :', task);
+    
+    setTask((prevTasks) => {
+      return prevTasks.filter((el) => {
+        console.log('el :', el);
+        return el.props.id !== id;
+      });
     });
+    
+    // we might need to send ID (to the backend) when deleting in order to identify which task needs to be deleted 
 
-    console.log('this is test: ', test);
-    console.log('this is time :', new Date());
-    setTask(test);
+    // fetch('/delete/task', {
+    //   method: 'DELETE',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({hello: 'world'})
+    // })
+    //   .then(resp => resp.json())
+    //   .then((data) => {
+    //     console.log('this is data from delete :', data);
+    //   })
+    //   .catch((err) => {
+    //     console.log('Error : ', err);
+    //   });
+    
   }
   
   return (
