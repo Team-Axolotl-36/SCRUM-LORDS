@@ -11,9 +11,10 @@ const ButtonContainer = (props) => {
     
     setProjectId( (state) => state + 1);
 
-    const newProject = ( <Project projectTitle={input} key={input} id={projectId}/> );
+    const newProject = ( <Project projectTitle={input} key={projectId} projectId={projectId}/> );
     
     setProjects( [...projects, newProject] );
+    setInput('');
   }
 
   // fetch('/',{
@@ -36,7 +37,7 @@ const ButtonContainer = (props) => {
         onClick={handleSubmit}>
           Button to add task.
       </button>
-      <input placeholder='Title of the project' required onChange={((e) => {setInput(e.target.value);}) } type="text" />
+      <input value={input} placeholder='Title of the project' required onChange={((e) => {setInput(e.target.value);}) } type="text" />
       {projects}
 
     </div>
